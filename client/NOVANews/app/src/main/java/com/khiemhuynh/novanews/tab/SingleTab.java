@@ -12,6 +12,10 @@ import android.widget.GridView;
 import com.khiemhuynh.novanews.NewsContentActivity;
 import com.khiemhuynh.novanews.R;
 import com.khiemhuynh.novanews.adapter.ColorAdapter;
+import com.khiemhuynh.novanews.core.data.Item;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Administrator on 10/29/2016.
@@ -19,18 +23,32 @@ import com.khiemhuynh.novanews.adapter.ColorAdapter;
 
 public class SingleTab extends Fragment {
 
-    GridView gridView;
+    private GridView gridView;
+
+    private List<Item> items;
+
+    public SingleTab() {
+        items = new ArrayList<>();
+    }
+
+    public void update(List<Item> items) {
+        this.items = items;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.single_tab, container, false);
 
         gridView = (GridView) view.findViewById(R.id.gridview);
-        gridView.setAdapter(new ColorAdapter(getContext()));
+
+        gridView.setAdapter(new ColorAdapter(getContext(), items));
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent newsContent = new Intent(view.getContext(),NewsContentActivity.class);
+
+                Intent newsContent = new Intent(view.getContext(), NewsContentActivity.class);
+                newsContent.putExtra("content", items.get(position).getContent());
                 view.getContext().startActivity(newsContent);
             }
         });
