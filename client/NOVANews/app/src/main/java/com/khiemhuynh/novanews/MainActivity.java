@@ -21,8 +21,15 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
-        tabLayout.addTab(tabLayout.newTab().setText("TIN NÓNG"));
-        tabLayout.addTab(tabLayout.newTab().setText("CHỦ ĐỀ"));
+
+//        int numOfSubjects;
+//        for (int i = 0;i<4;i++){
+//
+//        }
+        tabLayout.addTab(tabLayout.newTab().setText("ONE"));
+        tabLayout.addTab(tabLayout.newTab().setText("TWO"));
+        tabLayout.addTab(tabLayout.newTab().setText("THERE"));
+        tabLayout.addTab(tabLayout.newTab().setText("FOUR"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
@@ -63,9 +70,6 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 
 
 }

@@ -20,14 +20,16 @@ public final class ColorAdapter extends BaseAdapter {
     private final List<Item> mItems = new ArrayList<Item>();
     private final LayoutInflater mInflater;
 
+
     public ColorAdapter(Context context) {
         mInflater = LayoutInflater.from(context);
 
         mItems.add(new Item("Purple",0xffba68c8));
+        mItems.add(new Item("Blue Grey", 0xff90a4ae));
         mItems.add(new Item("Pink", 0xfff06292));
-//        mItems.add(new Item("Blue", 0xff64b5f6));
-//        mItems.add(new Item("Cyan", 0xff4dd0e1));
-
+        mItems.add(new Item("Brown", 0xffa1887f));
+        mItems.add(new Item("Cyan", 0xff4dd0e1));
+        mItems.add(new Item("Lime", 0xffdce775));
     }
 
     @Override
@@ -64,15 +66,21 @@ public final class ColorAdapter extends BaseAdapter {
         name = (TextView) v.getTag(R.id.text);
 
 
-        Item item = getItem(i);
+        final Item item = getItem(i);
 
         color.setBackgroundColor(item.colorNum);
-        color.setText("-Phim Học đường Là Anh là dự án phim dài tập của FAPtv trong năm 2016 - phim được chăm chút kĩ lưỡng , kịch bản được phát triển bởi Hi Team" +
-                "Phim dự kiến phát sóng mỗi tuần 1 tập");
+        color.setText("Tui là ai?");
         color.setTextColor(item.colorNum);
-
-
         name.setText(item.name);
+
+//        color.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent newsContent = new Intent(v.getContext(),NewsContentActivity.class);
+//                v.getContext().startActivity(newsContent);
+//            }
+//        });
+
 
         return v;
     }
