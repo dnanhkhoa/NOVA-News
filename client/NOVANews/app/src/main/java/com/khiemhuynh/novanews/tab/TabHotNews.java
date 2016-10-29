@@ -10,7 +10,7 @@ import android.widget.GridView;
 
 import com.khiemhuynh.novanews.R;
 import com.khiemhuynh.novanews.adapter.ColorAdapter;
-import com.khiemhuynh.novanews.adapter.CustomAdapter;
+import com.khiemhuynh.novanews.adapter.ViewElementsAdapter;
 import com.khiemhuynh.novanews.adapter.ViewElements;
 
 import java.util.ArrayList;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class TabHotNews extends Fragment {
 
     GridView gridView;
-    CustomAdapter cus_adapter;
+    ViewElementsAdapter cus_adapter;
     ArrayList<ViewElements> viewElementsList;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class TabHotNews extends Fragment {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                
+
             }
         });
         return view;

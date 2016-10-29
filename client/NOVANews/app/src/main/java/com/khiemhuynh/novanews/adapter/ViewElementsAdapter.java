@@ -14,9 +14,9 @@ import java.util.List;
 /**
  * Created by Administrator on 10/25/2016.
  */
-public class CustomAdapter extends ArrayAdapter<ViewElements> {
+public class ViewElementsAdapter extends ArrayAdapter<ViewElements> {
 
-    public CustomAdapter(Context context, int resource, List<ViewElements> items) {
+    public ViewElementsAdapter(Context context, int resource, List<ViewElements> items) {
         super(context, resource, items);
     }
 

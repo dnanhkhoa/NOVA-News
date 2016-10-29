@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NOVANews</string>
+    <string name="app_name">NOVA News</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string name="action_settings">Settings</string>
