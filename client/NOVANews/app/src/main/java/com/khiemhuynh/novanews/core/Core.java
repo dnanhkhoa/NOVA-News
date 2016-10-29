@@ -36,8 +36,8 @@ public class Core {
 
         // Fake data
         Category cat1 = new Category("HOT NEWS");
-        cat1.addItem(new Item("Bai 1", "Noi dung 1"));
-        cat1.addItem(new Item("Bai 2", "Noi dung 2"));
+        cat1.addItem(new Item("Không khởi tố vụ nam hành khách đánh nữ nhân viên hàng không", "Sự việc hai nam hành khách đánh nữ nhân viên hàng không tại sân bay Nội Bài diễn ra ngày 18/10. Đến ngày 20/10, Thủ tướng yêu cầu Chủ tịch UBND thành phố Hà Nội chỉ đạo các cơ quan chức năng khẩn trương làm rõ và báo cáo kết quả lên Thủ tướng trong tháng 10."));
+        cat1.addItem(new Item("Hành khách kể về phút hoảng loạn trên phi cơ bốc cháy Mỹ ", "Chiếc phi cơ chở 161 hành khách và tổ bay 9 người khởi hành từ sân bay O'Hare, Chicago, bang Illinois, đến Miami, bang Florida, bốc cháy trên đường băng khi chuẩn bị cất cánh. 20 người bị thương nhẹ đang được điều trị trong bệnh viện. "));
         cat1.addItem(new Item("Bai 3", "Noi dung 3"));
         cat1.addItem(new Item("Bai 3", "Noi dung 1"));
         cat1.addItem(new Item("Bai 5", "Noi dung 2"));
