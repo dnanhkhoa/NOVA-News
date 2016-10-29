@@ -25,8 +25,9 @@ public class NewsContentActivity extends AppCompatActivity {
 
 
         Random rnd = new Random();
-        newsContent.setBackgroundColor(Utils.COLORS[rnd.nextInt(Utils.COLORS.length)]);
-
+        int color = Utils.COLORS[rnd.nextInt(Utils.COLORS.length)];
+        newsContent.setBackgroundColor(color);
+        newsContent.setTextColor(color);
         newsContent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
