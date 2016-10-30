@@ -2,7 +2,6 @@ package com.khiemhuynh.novanews.core;
 
 import com.khiemhuynh.novanews.core.data.Category;
 import com.khiemhuynh.novanews.core.data.Item;
-import com.khiemhuynh.novanews.utils.object.Post;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,12 +21,6 @@ public class Core {
     private Core() {
         categories = new ArrayList<>();
         maps = new HashMap<>();
-
-        //new Topic().execute();
-        addCategory("Tin nóng");
-        addCategory("Khoa học");
-        addCategory("Thời sự");
-        loadData();
     }
 
     public static Core getInstance() {
@@ -41,18 +34,21 @@ public class Core {
         return categories;
     }
 
-    public void loadData() {
-        new Post().execute();
-    }
-
     public void addItem(String title, String content, String topic) {
+        topic = topic + ".";
         Category category = maps.get(topic);
         category.addItem(new Item(title, content));
     }
 
     public void addCategory(String name) {
+        name = name + ".";
         Category category = new Category(name);
         this.categories.add(category);
         this.maps.put(name, category);
+    }
+
+    public void clearCategories() {
+        this.categories.clear();
+        this.maps.clear();
     }
 }

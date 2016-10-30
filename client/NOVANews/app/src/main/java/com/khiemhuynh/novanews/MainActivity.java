@@ -9,6 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.khiemhuynh.novanews.adapter.PagerAdapter;
+import com.khiemhuynh.novanews.core.Core;
+import com.khiemhuynh.novanews.utils.Utils;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +32,51 @@ public class MainActivity extends AppCompatActivity {
 
         int appcolor = 0xff4caf50;
         tabLayout.setTabTextColors(appcolor, appcolor);
+
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
+
+        Core.getInstance().clearCategories();
+
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                String url = "https://novanews-91a18.firebaseio.com/topics.json";
+                String content = Utils.getURLContent(url);
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray arrays = jsonObject.getJSONArray("-KVHFgB1SJC7xerCOL_X");
+                    for (int i = 0; i < arrays.length(); ++i) {
+                        Core.getInstance().addCategory((String) arrays.get(i));
+                    }
+                } catch (JSONException e) {
+                }
+
+                url = "https://novanews-91a18.firebaseio.com/news.json";
+                content = Utils.getURLContent(url);
+                try {
+                    JSONObject jsonObject = new JSONObject(content);
+                    JSONArray jsonArray = jsonObject.names();
+
+                    for (int i = 0; i < jsonArray.length(); ++i) {
+                        JSONObject obj = ((JSONObject)jsonObject.get((String)jsonArray.get(i)));
+                        String title = obj.getString("title");
+                        String postContent = obj.getString("content");
+                        String category = obj.getString("category");
+
+                        Core.getInstance().addItem(title, postContent, category);
+                    }
+                } catch (JSONException e) {
+                }
+            }
+        });
+
+        thread.start();
+
+        try {
+            thread.join();
+        } catch (InterruptedException e) {
+        }
+
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout);
         viewPager.setAdapter(adapter);
