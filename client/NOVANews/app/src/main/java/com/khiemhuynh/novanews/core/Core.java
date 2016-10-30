@@ -34,6 +34,7 @@ public class Core {
     public void loadData() {
         // Logic
 
+
         // Fake data
         Category cat1 = new Category("TIN NÓNG.");
         cat1.addItem(new Item("Không khởi tố vụ nam hành khách đánh nữ nhân viên hàng không", "Sự việc hai nam hành khách đánh nữ nhân viên hàng không tại sân bay Nội Bài diễn ra ngày 18/10. Đến ngày 20/10, Thủ tướng yêu cầu Chủ tịch UBND thành phố Hà Nội chỉ đạo các cơ quan chức năng khẩn trương làm rõ và báo cáo kết quả lên Thủ tướng trong tháng 10."));
