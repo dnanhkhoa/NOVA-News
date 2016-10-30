@@ -23,8 +23,9 @@ public class MainActivity extends AppCompatActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+
         int appcolor = 0xff4caf50;
-        tabLayout.setTabTextColors(appcolor,appcolor);
+        tabLayout.setTabTextColors(appcolor, appcolor);
         final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
         PagerAdapter adapter = new PagerAdapter(getSupportFragmentManager(), tabLayout);
