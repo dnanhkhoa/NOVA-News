@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import com.khiemhuynh.novanews.NewsContentActivity;
+import com.khiemhuynh.novanews.activity.NewsContentActivity;
 import com.khiemhuynh.novanews.R;
 import com.khiemhuynh.novanews.adapter.ColorAdapter;
 import com.khiemhuynh.novanews.core.data.Item;

@@ -1,4 +1,4 @@
-package com.khiemhuynh.novanews;
+package com.khiemhuynh.novanews.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

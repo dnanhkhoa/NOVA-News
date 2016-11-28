@@ -1,10 +1,11 @@
-package com.khiemhuynh.novanews;
+package com.khiemhuynh.novanews.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import com.khiemhuynh.novanews.R;
 import com.khiemhuynh.novanews.core.data.Item;
 import com.khiemhuynh.novanews.utils.Utils;
 

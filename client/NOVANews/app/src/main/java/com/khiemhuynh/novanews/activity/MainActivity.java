@@ -1,4 +1,4 @@
-package com.khiemhuynh.novanews;
+package com.khiemhuynh.novanews.activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.khiemhuynh.novanews.R;
 import com.khiemhuynh.novanews.adapter.PagerAdapter;
 import com.khiemhuynh.novanews.core.Core;
 import com.khiemhuynh.novanews.utils.Utils;
